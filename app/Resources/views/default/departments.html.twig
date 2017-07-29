@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<div class="wrapper">
+<div class="container" class="col-md-10 col-md-offset-1 col-sm-12" style="top: 30px">
+	<div style="padding-bottom: 20px">
+		<a href="/addDepartment" class="btn btn-primary">Add department</a>
+	</div>
+
+	<div class="panel panel-primary">
+		<div class="table-responsive">
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>Department name</th>
+						<th>Manager</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for d in departments %}
+						<tr>
+							<td>{{ d.departmentId }}</td>
+							<td>{{ d.departmentName }}</td>
+							<td>{{ (d.manager) ? d.manager.firstName }}</td>
+							<td>
+								<a href="editDepartment/{{d.departmentId}}" class="btn btn-xs btn-primary"><i class="glyphicon glyphicon-pencil"></i></a>
+								<a href="deleteDepartment/{{d.departmentId}}" class="btn btn-xs btn-danger"><i class="glyphicon glyphicon-trash"></i></a>
+							</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+</div>
+
+{% endblock %}
