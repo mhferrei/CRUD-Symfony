@@ -1,6 +1,8 @@
 Aplicação CRUD com Symfony e SQLite
 ===================================
 
+Não tratei alguns erros. Fiz apenas para ilustrar uma aplicação simples com Symfony.
+
 Passo a passo para instalação:
 
   * Descompactar os arquivos em uma pasta qualquer;
